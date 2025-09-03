@@ -48,6 +48,7 @@ harga_str = st.sidebar.text_input("Harga Barang (Rp)", value="2.500.000")
 uang_sekarang = parse_rupiah(uang_str)
 harga_barang = parse_rupiah(harga_str)
 
+st.sidebar.header("Input kondisi psikologis:")
 bahagia = st.sidebar.slider("Tingkat Kebahagiaan Jika Membeli\n1 = Biasa saja, 100 = Sangat bahagia", 1, 100, 50)
 penting = st.sidebar.slider("Tingkat Kepentingan Barang\n1 = Biasa saja, 100 = Sangat penting", 1, 100, 50)
 
