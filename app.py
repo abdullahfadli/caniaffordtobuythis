@@ -43,7 +43,7 @@ def saw_rekomendasi(uang_sekarang, harga_barang, bahagia, penting):
 # ---------------- Sidebar Input SPK ----------------
 st.sidebar.header("Input kondisi finansial:")
 uang_str = st.sidebar.text_input("Uang yang Dimiliki Sekarang (Rp)", value="")
-harga_str = st.sidebar.text_input("Harga Barang (Rp)", value="")
+harga_str = st.sidebar.text_input("Harga Barang yang Ingin Dibeli (Rp)", value="")
 
 uang_sekarang = parse_rupiah(uang_str)
 harga_barang = parse_rupiah(harga_str)
@@ -54,7 +54,8 @@ penting = st.sidebar.slider("Tingkat Kepentingan Barang\n\n0 = Biasa saja, 100 =
 
 # ---------------- Sidebar Simulasi Tabungan ----------------
 st.sidebar.header("🗓️ Simulasi Tabungan")
-tabungan_perbulan = st.sidebar.number_input("Jumlah menabung per bulan (Rp)", min_value=0, value=500_000, step=100_000)
+tabungan_perbulan_str = st.sidebar.text_input("Jumlah menabung per bulan (Rp)", value="")
+tabungan_perbulan = parse_rupiah(tabungan_perbulan_str)
 
 # ---------------- Hasil Rekomendasi ----------------
 if st.button("🔍 Lihat Rekomendasi"):
@@ -64,7 +65,7 @@ if st.button("🔍 Lihat Rekomendasi"):
     st.write(f"- Skor Akhir: {skor:.2f} (0–1)")
 
     # Threshold rekomendasi
-    if skor >= 0.:
+    if skor >= 0.75:
         st.success("✅ Rekomendasi: Anda dapat membeli barang ini.")
     else:
         st.error("❌ Rekomendasi: Sebaiknya tunda dulu pembelian.")
