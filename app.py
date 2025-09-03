@@ -42,15 +42,15 @@ def saw_rekomendasi(uang_sekarang, harga_barang, bahagia, penting):
 
 # ---------------- Sidebar Input SPK ----------------
 st.sidebar.header("Input kondisi finansial:")
-uang_str = st.sidebar.text_input("Uang yang Dimiliki Sekarang (Rp)", value="1.000.000")
-harga_str = st.sidebar.text_input("Harga Barang (Rp)", value="2.500.000")
+uang_str = st.sidebar.text_input("Uang yang Dimiliki Sekarang (Rp)", value="")
+harga_str = st.sidebar.text_input("Harga Barang (Rp)", value="")
 
 uang_sekarang = parse_rupiah(uang_str)
 harga_barang = parse_rupiah(harga_str)
 
 st.sidebar.header("Input kondisi psikologis:")
-bahagia = st.sidebar.slider("Tingkat Kebahagiaan Jika Membeli\n1 = Biasa saja, 100 = Sangat bahagia", 1, 100, 50)
-penting = st.sidebar.slider("Tingkat Kepentingan Barang\n1 = Biasa saja, 100 = Sangat penting", 1, 100, 50)
+bahagia = st.sidebar.slider("Tingkat Kebahagiaan Jika Membeli\n\n0 = Biasa saja, 100 = Sangat bahagia", 0, 100, 0)
+penting = st.sidebar.slider("Tingkat Kepentingan Barang\n\n0 = Biasa saja, 100 = Sangat penting", 0, 100, 0)
 
 # ---------------- Sidebar Simulasi Tabungan ----------------
 st.sidebar.header("🗓️ Simulasi Tabungan")
