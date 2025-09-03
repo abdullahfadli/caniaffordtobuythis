@@ -41,7 +41,7 @@ def saw_rekomendasi(uang_sekarang, harga_barang, bahagia, penting):
     return skor, n_afford, n_bahagia, n_penting, tabungan_minimal
 
 # ---------------- Sidebar Input SPK ----------------
-st.sidebar.header("Input kondisi finansial dan psikologis:")
+st.sidebar.header("Input kondisi finansial:")
 uang_str = st.sidebar.text_input("Uang yang Dimiliki Sekarang (Rp)", value="1.000.000")
 harga_str = st.sidebar.text_input("Harga Barang (Rp)", value="2.500.000")
 
